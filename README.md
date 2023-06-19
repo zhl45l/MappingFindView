@@ -2,7 +2,7 @@
 一个 安卓 省去 findViewByID的小工具，只需要在类声明处，添加一个注解，就会按照规则 将所有用户声明的View控件全部绑定到对应的布局文件。
 
 # example
-
+```
 package com.gc.mappingfindview;
 
 import android.os.Bundle;
@@ -66,9 +66,9 @@ public class MainActivity extends AppCompatActivity {
         strText.split("a"); // 空指针异常，不能直接使用
     }
 }
-
+```
 # activity_main.xml
-
+```
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -90,3 +90,4 @@ public class MainActivity extends AppCompatActivity {
         android:layout_height="wrap_content"
         android:text="Hello World!" />
 </LinearLayout>
+```
