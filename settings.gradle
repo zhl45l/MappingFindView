@@ -1,0 +1,3 @@
+include ':MappingFindViewAnnotation'
+include ':app'
+rootProject.name = "MappingFindView"
