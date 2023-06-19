@@ -2,14 +2,13 @@
 一个 安卓 省去 findViewByID的小工具，只需要在类声明处，添加一个注解，就会按照规则 将所有用户声明的View控件全部绑定到对应的布局文件。
 
 # example
+
 package com.gc.mappingfindview;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
-import android.widget.ImageView;
 import android.widget.TextView;
-
+import android.widget.ImageView;
+import androidx.appcompat.app.AppCompatActivity;
 import com.gc.mappingfindviewannotation.MappingFindView;
 import com.gc.mappingfindviewannotation.annotation.BindLayoutID;
 
@@ -32,21 +31,25 @@ public class MainActivity extends AppCompatActivity {
      * 请注意：名字必须一致，控件类型必须一致
      * 可以直接使用
      */
+
     TextView tv_userName;
 
     /**
      * 可以直接使用
      */
+
     TextView tv_pwd;
 
     /**
      * 可以直接使用
      */
+
     ImageView iv_view;
 
     /**
      * 不能直接使用，只有 View的子类才会进行映射关联
      */
+
     String strText;
 
     @Override
@@ -58,13 +61,14 @@ public class MainActivity extends AppCompatActivity {
         tv_userName.setText("这里可以直接使用了");
         tv_pwd.setText("可以直接使用");
 
-//        iv_view.setImageResource(R.drawable.flower); // 不能直接使用，因为布局文件中，找不到id为iv_view的控件
+        //iv_view.setImageResource(R.drawable.flower); 不能直接使用，因为布局文件中，找不到id为iv_view的控件
 
         strText.split("a"); // 空指针异常，不能直接使用
     }
 }
 
 # activity_main.xml
+
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -85,5 +89,4 @@ public class MainActivity extends AppCompatActivity {
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello World!" />
-
 </LinearLayout>
