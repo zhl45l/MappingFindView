@@ -1,6 +1,9 @@
 plugins {
     id 'com.android.library'
+
 }
+apply plugin: 'com.github.dcendents.android-maven'
+group='com.github.zhl45l@163.com'  //注意com.github.github账号
 
 android {
     compileSdkVersion 29
