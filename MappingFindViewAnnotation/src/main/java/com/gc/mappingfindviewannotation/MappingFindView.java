@@ -1,7 +1,5 @@
 package com.gc.mappingfindviewannotation;
 
-import android.util.Log;
-
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -15,10 +13,7 @@ public class MappingFindView {
     private static String TAG = "MappingFindView";
     private static String pckName;
 
-    private static Object resources;
-    private static Method getIdentifierMethod;
-    private static Method resourcesMethod;
-    private static Method findViewByIdMethod;
+//    private static Method findViewByIdMethod;
 
     /**
      * 映射 Activity中所有view子类的属性
@@ -106,18 +101,16 @@ public class MappingFindView {
             for (int i = 0; i < allField.length; i++) {
                 tmpF = allField[i];
                 if (!isView(tmpF.getType())) {
-                    Log.i(TAG, i + " 不是继承自view 属性 跳过: name = " + tmpF.getName() + " type=" + tmpF.getType());
+//                    Log.i(TAG, i + " 不是继承自view 属性 跳过: name = " + tmpF.getName() + " type=" + tmpF.getType());
                     continue;
                 }
 
-//                Log.i(TAG, i + " 继承自view 属性: name = " + tmpF.getName() + "  type=" + tmpF.getType());
                 tmpF.setAccessible(true);
 
-//                Log.e(TAG, i + " 属性=" + tmpF.getName() + "  id = " + tmpF.getName());
-                Object view = getView(rootV, tmpF.getName());
+                Object view = findViewById(rootV, tmpF.getName());
 
                 if (view == null) {
-                    Log.e(TAG, "没有找到该组件映射的id:组件名称" + tmpF.getName());
+//                    Log.e(TAG, "没有找到该控件映射的id:控件名称" + tmpF.getName());
                     continue;
                 }
 
@@ -209,13 +202,13 @@ public class MappingFindView {
      * @throws IllegalAccessException
      * @throws NoSuchMethodException
      */
-    private static Object getView(Object object, String idName) throws InvocationTargetException, IllegalAccessException, NoSuchMethodException {
+    private static Object findViewById(Object object, String idName) throws InvocationTargetException, IllegalAccessException, NoSuchMethodException {
         int id = getResourceID(object, idName);
-        return findViewByIdMethod.invoke(object, id);
+        return getMethod(object.getClass(), "findViewById").invoke(object, id);
     }
 
     /**
-     * 获取资源id,int值
+     * 获取资源id
      *
      * @param object 宿主
      * @param idName id的名字
@@ -225,10 +218,9 @@ public class MappingFindView {
      * @throws NoSuchMethodException
      */
     private static int getResourceID(Object object, String idName) throws InvocationTargetException, IllegalAccessException, NoSuchMethodException {
-        resourcesMethod = getMethod(object.getClass(), "getResources");
-        findViewByIdMethod = getMethod(object.getClass(), "findViewById");
-        resources = resourcesMethod.invoke(object);
-        getIdentifierMethod = resources.getClass().getMethod("getIdentifier", String.class, String.class, String.class);
+        Method resourcesMethod = getMethod(object.getClass(), "getResources");
+             Object resources = resourcesMethod.invoke(object);
+        Method getIdentifierMethod = resources.getClass().getMethod("getIdentifier", String.class, String.class, String.class);
 
         return (int) getIdentifierMethod.invoke(resources, idName, "id", pckName);
     }
@@ -252,11 +244,10 @@ public class MappingFindView {
         return inheritFrom(clz, "android.content.Context");
     }
 
+    // 是否继承自父类
     private static boolean inheritFrom(Class clz, String superClass) {
         if (clz == null) return false;
-
         String typeName = clz.getName().trim();
-        Log.e("inheritFrom ", "[" + clz + "]  :  [" + typeName + "] == [" + superClass + "]");
         if (typeName.equals("java.lang.Object")) {
             return false;
         }
