@@ -12,7 +12,6 @@ import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 import com.gc.mappingfindviewannotation.MappingFindView;
 
-
 /**
  * 在 activity
  * setContentView 之后 使用：  MappingFindView.mapping(this);
@@ -36,19 +35,16 @@ public class MainActivity extends AppCompatActivity {
     /**
      * 可以直接使用
      */
-
     TextView tv_pwd;
 
     /**
      * 可以直接使用
      */
-
     ImageView iv_view;
 
     /**
      * 不能直接使用，只有 View的子类才会进行映射关联
      */
-
     String strText;
 
     MyFragment fragmentcenter;
@@ -59,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        // 在setContentView后，添加我们的映射。之后该类中声明的View控件就可以直接使用，当然，不居中要能找到对应控件名的id才行。
         MappingFindView.mappingActivity(this);
 
         tv_userName.setText("这里可以直接使用了");
