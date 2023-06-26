@@ -92,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
 </LinearLayout>
 ```
 
+# 自定义View：CView
 ```
 public class CView extends LinearLayout {
     TextView tv_test1, tv_test2;
@@ -143,9 +144,8 @@ public class CView extends LinearLayout {
 </LinearLayout>
 ```
 
+# Fragment：MyFragment
 ```
-/**
- */
 public class MyFragment extends Fragment {
     TextView tv_test1;
     Button bt_test2;
