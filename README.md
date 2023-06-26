@@ -8,12 +8,13 @@ package com.gc.mappingfindview;
 import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.ImageView;
+
 import androidx.appcompat.app.AppCompatActivity;
 import com.gc.mappingfindviewannotation.MappingFindView;
-import com.gc.mappingfindviewannotation.annotation.BindLayoutID;
 
 /**
- * 在 activity上使用@BindLayoutID注解来绑定布局。
+ * 在 activity
+ * setContentView 之后 使用：  MappingFindView.mapping(this);
  * 之后，在本类中声明的控件 只要 和 布局文件中的 id一致，就会自动绑定。
  * 如：声明成员属性： TextView tv_userName;
  * 对应布局中：
@@ -23,47 +24,46 @@ import com.gc.mappingfindviewannotation.annotation.BindLayoutID;
  * android:layout_height="wrap_content"
  * android:text="Hello World!" />
  */
-@BindLayoutID(layoutID = R.layout.activity_main)
 public class MainActivity extends AppCompatActivity {
-
     /**
      * 工具会帮你将布局文件中 id=tv_userName的控件 和 TextView tv_userName 这个属性绑定起来
      * 请注意：名字必须一致，控件类型必须一致
      * 可以直接使用
      */
-
     TextView tv_userName;
 
     /**
      * 可以直接使用
      */
-
     TextView tv_pwd;
 
     /**
      * 可以直接使用
      */
-
     ImageView iv_view;
 
     /**
      * 不能直接使用，只有 View的子类才会进行映射关联
      */
-
     String strText;
+
+    MyFragment fragmentcenter;
+
+    CView CView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        MappingFindView.mapping(this);
+        // 在setContentView后，添加我们的映射。之后该类中声明的View控件就可以直接使用，当然，不居中要能找到对应控件名的id才行。
+        MappingFindView.mappingActivity(this);
 
         tv_userName.setText("这里可以直接使用了");
         tv_pwd.setText("可以直接使用");
 
-        //iv_view.setImageResource(R.drawable.flower); 不能直接使用，因为布局文件中，找不到id为iv_view的控件
+        // iv_view.setImageResource(R.drawable.flower); 不能直接使用，因为布局文件中，找不到id为iv_view的控件
 
-        strText.split("a"); // 空指针异常，不能直接使用
+        // strText.split("a"); // 空指针异常，不能直接使用
     }
 }
 ```
@@ -92,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
 </LinearLayout>
 ```
 
+# 自定义View：CView
 ```
 public class CView extends LinearLayout {
     TextView tv_test1, tv_test2;
@@ -143,9 +144,8 @@ public class CView extends LinearLayout {
 </LinearLayout>
 ```
 
+# Fragment：MyFragment
 ```
-/**
- */
 public class MyFragment extends Fragment {
     TextView tv_test1;
     Button bt_test2;
