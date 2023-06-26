@@ -13,8 +13,6 @@ public class MappingFindView {
     private static String TAG = "MappingFindView";
     private static String pckName;
 
-//    private static Method findViewByIdMethod;
-
     /**
      * 映射 Activity中所有view子类的属性
      * 目前Activity必须继承自：AppCompatActivity

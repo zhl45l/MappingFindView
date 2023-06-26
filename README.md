@@ -91,3 +91,115 @@ public class MainActivity extends AppCompatActivity {
         android:text="Hello World!" />
 </LinearLayout>
 ```
+
+```
+public class CView extends LinearLayout {
+    TextView tv_test1, tv_test2;
+
+    public CView(Context context) {
+        super(context);
+        init();
+    }
+
+
+    public CView(Context context, @Nullable AttributeSet attrs) {
+        super(context, attrs);
+        init();
+    }
+
+    public CView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
+        init();
+    }
+
+    private void init() {
+        LayoutInflater.from(getContext()).inflate(R.layout.item_c_view, this, true);
+        MappingFindView.mappingView(getContext(), this);
+        tv_test1.setText("设置成功13232");
+        tv_test2.setText("设置成功21111");
+    }
+}
+```
+# item_c_view.xml
+```
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_test1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="测试下1"/>
+
+    <TextView
+        android:id="@+id/tv_test2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="测试下2"/>
+
+</LinearLayout>
+```
+
+```
+/**
+ */
+public class MyFragment extends Fragment {
+    TextView tv_test1;
+    Button bt_test2;
+
+    public MyFragment() {
+        // Required empty public constructor
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        View rootV = inflater.inflate(R.layout.fragment_blank, container, false);
+        MappingFindView.mappingFragment(this, rootV);
+        init(rootV);
+        return rootV;
+    }
+
+    private void init(View rootV) {
+        tv_test1.setText("设置陈工1");
+        bt_test2.setText("设置陈工222");
+    }
+}
+```
+
+# fragment_blank.xml
+```
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="30dp"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".MyFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:id="@+id/tv_test1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hello_blank_fragment" />
+
+    <Button
+        android:id="@+id/bt_test2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hello_blank_fragment" />
+
+</LinearLayout>
+```
