@@ -1,4 +1,4 @@
-package com.gc.mappingfindviewLibary;
+package com.gc.demo;
 
 import android.os.Bundle;
 import android.widget.TextView;
@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.gc.mappingfindview.MappingFindView;
+import com.gc.demo.R;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.gc.mappingfindviewLibary;
+package com.gc.demo;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 
 import com.gc.mappingfindview.MappingFindView;
+import com.gc.demo.R;
 
 public class CView extends LinearLayout {
     TextView tv_test1, tv_test2;

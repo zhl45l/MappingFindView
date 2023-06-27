@@ -1,4 +1,4 @@
-package com.gc.mappingfindviewLibary;
+package com.gc.demo;
 
 import android.os.Bundle;
 
@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.gc.mappingfindview.MappingFindView;
+import com.gc.demo.R;
 
 /**
  * A simple {@link Fragment} subclass.
