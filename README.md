@@ -1,16 +1,29 @@
 # MappingFindView
 一个 安卓 省去 findViewByID的小工具，只需要在类声明处，添加一个注解，就会按照规则 将所有用户声明的View控件全部绑定到对应的布局文件。
 
+```
+请在项目的build.gradle中添加jitpack仓库：
+  repositories {
+        maven { url 'https://www.jitpack.io' }
+    }
+```
+```
+请在模块的build.gradle中添加jitpack仓库：
+  dependencies {
+        implementation 'com.github.zhl45l:MappingFindView:v1.2.0'
+  }
+```
+
 # example
 ```
-package com.gc.mappingfindview;
+package mappingfindviewLibary;
 
 import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import com.gc.mappingfindviewannotation.MappingFindView;
+import mappingfindview.MappingFindView;
 
 /**
  * 在 activity
@@ -188,7 +201,6 @@ public class MyFragment extends Fragment {
     android:orientation="vertical"
     tools:context=".MyFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
         android:id="@+id/tv_test1"
         android:layout_width="wrap_content"
