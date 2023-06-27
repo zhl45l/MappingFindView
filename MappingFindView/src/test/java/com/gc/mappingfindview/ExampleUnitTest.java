@@ -1,4 +1,4 @@
-package com.gc.demo;
+package com.gc.mappingfindview;
 
 import org.junit.Test;
 

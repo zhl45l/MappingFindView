@@ -1,4 +1,4 @@
-package com.gc.demo;
+package com.gc.mappingfindview;
 
 import android.os.Bundle;
 import android.widget.TextView;
@@ -9,8 +9,8 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.gc.mappingfindview.MappingFindView;
 import com.gc.demo.R;
+import com.gc.mappingfindviewtools.MappingFindView;
 
 import java.util.ArrayList;
 import java.util.List;

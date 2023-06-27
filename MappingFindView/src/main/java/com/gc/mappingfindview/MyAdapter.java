@@ -1,4 +1,4 @@
-package com.gc.demo;
+package com.gc.mappingfindview;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -12,8 +12,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.gc.mappingfindview.MappingFindView;
 import com.gc.demo.R;
+import com.gc.mappingfindviewtools.MappingFindView;
 
 import java.util.List;
 

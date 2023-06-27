@@ -1,4 +1,4 @@
-package com.gc.demo;
+package com.gc.mappingfindview;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.gc.demo.test", appContext.getPackageName());
+        assertEquals("com.gc.mappingfindview", appContext.getPackageName());
     }
 }

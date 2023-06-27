@@ -5,15 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context="com.gc.mappingfindview.MainActivity">
 
     <fragment
         android:id="@+id/fragmentcenter"
-        android:name="com.gc.demo.MyFragment"
+        android:name="com.gc.mappingfindview.MyFragment"
         android:layout_width="match_parent"
         android:layout_height="300dp" />
 
-    <com.gc.demo.CView
+    <com.gc.mappingfindview.CView
         android:id="@+id/cv_cc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />

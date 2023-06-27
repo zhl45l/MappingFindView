@@ -1,4 +1,4 @@
-include ':demo'
-include ':MappingFindView'
-//include ':app'
-rootProject.name = "demo"
+include ':mappingfindview'
+include ':MappingFindViewTools'
+
+rootProject.name = "MappingFindView"
