@@ -14,21 +14,19 @@
         implementation 'com.github.zhl45l:MappingFindView:v1.2.0'
   }
 ```
-
+## 在Activity中：
 ```
- Activity:
-        @Override
-        protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_main);
-            MappingFindView.mappingActivity(this);
-            // 之后可直接使用所有控件，告别findViewByid，告别注释绑定
-             ...
-        }
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        MappingFindView.mappingActivity(this);
+        // 之后可直接使用所有控件，告别findViewByid，告别注释绑定
+         ...
+    }
 ```
-
+## 在Fragment中：
 ```
- Fragment:
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -39,26 +37,24 @@
         return rootV;
     }
 ```
-
+## 在自定义View中：
 ```
- 自定义View:
-       private void init() {
-           // 注意，这里加载的layout必须要挂载后 也就是 addview后才可以使用。
-           LayoutInflater.from(getContext()).inflate(R.layout.item_c_view, this, true);
-           MappingFindView.mappingView(this);
-           // 之后可直接使用所有控件，告别findViewByid，告别注释绑定
-            ...
-       }
+   private void init() {
+       // 注意，这里加载的layout必须要挂载后 也就是 addview后才可以使用。
+       LayoutInflater.from(getContext()).inflate(R.layout.item_c_view, this, true);
+       MappingFindView.mappingView(this);
+       // 之后可直接使用所有控件，告别findViewByid，告别注释绑定
+        ...
+   }
 ```
-
+## 在RecyclerView.ViewHolder中：
 ```
- RecyclerView.ViewHolder:
-        public MyHolder(@NonNull View itemView) {
-            super(itemView);
-            MappingFindView.mappingAdapter(this, itemView);
-           // 之后可直接使用所有控件，告别findViewByid，告别注释绑定
-           ...
-        }
+    public MyHolder(@NonNull View itemView) {
+        super(itemView);
+        MappingFindView.mappingAdapter(this, itemView);
+       // 之后可直接使用所有控件，告别findViewByid，告别注释绑定
+       ...
+    }
 ```
 
 # example
