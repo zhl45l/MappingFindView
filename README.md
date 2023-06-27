@@ -1,6 +1,7 @@
 # MappingFindView
 一个 安卓 省去 findViewByID的小工具，只需要在类声明处，添加一个注解，就会按照规则 将所有用户声明的View控件全部绑定到对应的布局文件。
 
+# 使用说明：
 ```
 请在项目的build.gradle中添加jitpack仓库：
   repositories {
@@ -14,9 +15,55 @@
   }
 ```
 
+```
+ Activity:
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_main);
+            MappingFindView.mappingActivity(this);
+            // 之后可直接使用所有控件，告别findViewByid，告别注释绑定
+             ...
+        }
+```
+
+```
+ Fragment:
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View rootV = inflater.inflate(R.layout.fragment_blank, container, false);
+        MappingFindView.mappingFragment(this, rootV);
+       // 之后可直接使用所有控件，告别findViewByid，告别注释绑定
+        init();
+        return rootV;
+    }
+```
+
+```
+ 自定义View:
+       private void init() {
+           // 注意，这里加载的layout必须要挂载后 也就是 addview后才可以使用。
+           LayoutInflater.from(getContext()).inflate(R.layout.item_c_view, this, true);
+           MappingFindView.mappingView(this);
+           // 之后可直接使用所有控件，告别findViewByid，告别注释绑定
+            ...
+       }
+```
+
+```
+ RecyclerView.ViewHolder:
+        public MyHolder(@NonNull View itemView) {
+            super(itemView);
+            MappingFindView.mappingAdapter(this, itemView);
+           // 之后可直接使用所有控件，告别findViewByid，告别注释绑定
+           ...
+        }
+```
+
 # example
 ```
-package mappingfindviewLibary;
+package demo;
 
 import android.os.Bundle;
 import android.widget.TextView;
