@@ -48,9 +48,20 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyHolder> {
     }
 
     public class MyHolder extends RecyclerView.ViewHolder {
-        TextView tv_test1;
+        /**
+         * tv_test1 可以直接使用，因为布局中有 对应名字的id，且类型一致
+         * abc 不能直接使用，因为布局文件中没有对应名字的id
+         */
+        TextView tv_test1, abc;
+        /**
+         * 可以直接使用，因为布局中有 对应名字的id，且类型一致
+         */
         LinearLayout ll_panle;
+        /**
+         * 可以直接使用，因为布局中有 对应名字的id，且类型一致
+         */
         Button bt_bt1;
+
 
         public MyHolder(@NonNull View itemView) {
             super(itemView);

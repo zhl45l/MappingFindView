@@ -18,7 +18,13 @@ import com.gc.demo.R;
  * create an instance of this fragment.
  */
 public class MyFragment extends Fragment {
+    /**
+     * 可以直接使用，因为布局中有 对应名字的id，且类型一致
+     */
     TextView tv_test1;
+    /**
+     * 可以直接使用，因为布局中有 对应名字的id，且类型一致
+     */
     Button bt_test2;
 
     public MyFragment() {

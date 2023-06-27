@@ -31,9 +31,11 @@ public class MainActivity extends AppCompatActivity {
     /**
      * 工具会帮你将布局文件中 id=tv_userName的控件 和 TextView tv_userName 这个属性绑定起来
      * 请注意：名字必须一致，控件类型必须一致
-     * 可以直接使用
+     * tv_userName 可以直接使用
+     * abab 不能直接使用，因为布局文件中没有对应名字的id
+     *
      */
-    TextView tv_userName;
+    TextView tv_userName, abab;
 
     /**
      * 可以直接使用
