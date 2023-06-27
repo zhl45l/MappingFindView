@@ -1,4 +1,4 @@
 include ':demo'
-include ':MappingFindView'
+include ':MappingFindViewUtlil'
 
 rootProject.name = "MappingFindView"
