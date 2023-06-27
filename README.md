@@ -3,14 +3,14 @@
 
 # example
 ```
-package com.gc.mappingfindview;
+package mappingfindviewLibary;
 
 import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import com.gc.mappingfindviewannotation.MappingFindView;
+import mappingfindview.MappingFindView;
 
 /**
  * 在 activity

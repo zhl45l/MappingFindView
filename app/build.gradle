@@ -8,7 +8,7 @@ android {
     buildToolsVersion "29.0.2"
 
     defaultConfig {
-        applicationId "com.gc.mappingfindview"
+        applicationId "com.gc.mappingfindviewLibary"
         minSdkVersion 19
         targetSdkVersion 28
         versionCode 1
@@ -45,5 +45,5 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
 //    implementation 'com.github.zhl45l:MappingFindView:v1.1.0'
-    implementation project( ":MappingFindViewAnnotation")
+    implementation project(':MappingFindView')
 }

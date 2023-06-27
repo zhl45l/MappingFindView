@@ -9,11 +9,11 @@
 
     <fragment
         android:id="@+id/fragmentcenter"
-        android:name="com.gc.mappingfindview.MyFragment"
+        android:name="com.gc.mappingfindviewLibary.MyFragment"
         android:layout_width="match_parent"
         android:layout_height="300dp" />
 
-    <com.gc.mappingfindview.CView
+    <com.gc.mappingfindviewLibary.CView
         android:id="@+id/cv_cc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
