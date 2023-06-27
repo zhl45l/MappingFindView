@@ -30,7 +30,7 @@ public class MappingFindView {
     }
 
     /**
-     * 映射一个自定义View，将其中所有的字段和 已存在的同名布局 绑定
+     * 映射一个自定义View，将其中所有的属性 和 已存在的同名布局 绑定
      * 必须主线程中调用，确保方法参数 都不为null
      *
      * @param view 自定义view根布局
@@ -48,7 +48,7 @@ public class MappingFindView {
     }
 
     /**
-     * 映射一个Fragment，将其中所有的字段和 已存在的同名布局 绑定
+     * 映射一个Fragment，将其中所有的属性 和 已存在的同名布局 绑定
      * 目前需使用：androidx.fragment.app报下的 fragment
      * 必须主线程中调用，确保方法参数 都不为null
      *
@@ -69,6 +69,7 @@ public class MappingFindView {
     }
 
     /**
+     * 映射一个Adapter，将其中所有的属性 和 已存在的同名布局 绑定
      * @param holder RecyclerView.ViewHolder
      * @param view   view的根节点
      */
