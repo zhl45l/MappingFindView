@@ -11,7 +11,7 @@
 ```
 请在模块的build.gradle中添加jitpack仓库：
   dependencies {
-        implementation 'com.github.zhl45l:MappingFindView:v1.2.0'
+        implementation 'com.github.zhl45l:MappingFindView:v1.6.0'
   }
 ```
 ## 在Activity中：
